@@ -1,8 +1,7 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 from pycoin.config import get_settings
-
-from fastapi.middleware.cors import CORSMiddleware
 
 settings = get_settings()
 
