@@ -1,0 +1,590 @@
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+dist/
+build/
+.venv/
+venv/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Testing and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# Python tools
+.ruff_cache/
+.mypy_cache/
+
+# Node
+node_modules/
+frontend/dist/
+frontend/.vite/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Operating system
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+tmp/
+temp/
+```
+
+## 6.3 Create `README.md`
+
+<WritingBlock id="62841" variant="document"># PyCoin (PYC)
+
+**An Educational Decentralized Cryptocurrency Built with Python**
+
+PyCoin is an educational cryptocurrency project designed to demonstrate the engineering principles behind decentralized digital currencies.
+
+The project implements a native blockchain, cryptographic wallets, digital signatures, transactions, Proof of Work consensus, mining, peer-to-peer networking, and a web-based wallet and blockchain explorer.
+
+## Project Objectives
+
+- Understand blockchain architecture.
+- Implement cryptographic transaction verification.
+- Develop a native cryptocurrency.
+- Build a Proof of Work consensus mechanism.
+- Implement decentralized peer-to-peer networking.
+- Develop a wallet and blockchain explorer.
+- Apply professional software engineering and security practices.
+
+## Technology Stack
+
+| Component | Technology |
+|---|---|
+| Core language | Python |
+| Backend | FastAPI |
+| Cryptography | PyNaCl |
+| Hashing | SHA-256 |
+| Database | SQLite |
+| ORM | SQLAlchemy |
+| Frontend | React + Vite |
+| Styling | CSS / Tailwind CSS (later phase) |
+| Testing | Pytest + Vitest |
+| Version control | Git + GitHub |
+
+## Project Status
+
+**Current phase:** Phase 0 — Project Initialization
+
+See [documentation/PROJECT_STATUS.md](documentation/PROJECT_STATUS.md).
+
+## Development Setup
+
+### Backend
+
+```bash
+git clone YOUR_REPOSITORY_URL
+cd pycoin
+
+python -m venv .venv
+source .venv/bin/activate
+
+python -m pip install -e ".[dev]"
+
+pytest -v
+python -m pycoin
+```
+
+### Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+### API Documentation
+
+When the backend is running:
+
+- API: http://127.0.0.1:8000
+- Swagger: http://127.0.0.1:8000/docs
+- Health: http://127.0.0.1:8000/api/v1/health
+
+## Development Roadmap
+
+- Phase 0: Project initialization
+- Phase 1: Cryptographic foundation
+- Phase 2: Blockchain data structures
+- Phase 3: Transaction engine
+- Phase 4: Cryptocurrency wallet
+- Phase 5: Mempool
+- Phase 6: Proof of Work mining
+- Phase 7: Consensus mechanism
+- Phase 8: Blockchain persistence
+- Phase 9: Peer-to-peer networking
+- Phase 10: Blockchain synchronization
+- Phase 11: REST API
+- Phase 12: React wallet application
+- Phase 13: Blockchain explorer
+- Phase 14: Security and testing
+- Phase 15: Deployment and documentation
+
+## Security Notice
+
+PyCoin is an educational project. It is not intended for handling real funds or production cryptocurrency transactions.
+
+Do not use experimental wallet implementations with valuable private keys.
+
+## License
+
+MIT License — see LICENSE.
+</WritingBlock>
+
+Create `LICENSE` with the standard MIT license text, using your chosen copyright holder and year.
+
+## 6.4 Create `documentation/PROJECT_STATUS.md`
+
+<WritingBlock id="62842" variant="document"># PyCoin Project Status
+
+## Project Information
+
+| Property | Value |
+|---|---|
+| Project | PyCoin |
+| Symbol | PYC |
+| Version | 0.1.0 |
+| Objective | Educational cryptocurrency |
+| Language | Python |
+| Consensus | Proof of Work |
+| Frontend | React |
+| Backend | FastAPI |
+| Database | SQLite |
+
+## Development Progress
+
+| Phase | Name | Status |
+|---|---|---|
+| 0 | Project Initialization | In Progress |
+| 1 | Cryptographic Foundation | Pending |
+| 2 | Blockchain Data Structures | Pending |
+| 3 | Transaction Engine | Pending |
+| 4 | Cryptocurrency Wallet | Pending |
+| 5 | Mempool | Pending |
+| 6 | Mining Engine | Pending |
+| 7 | Consensus Mechanism | Pending |
+| 8 | Blockchain Storage | Pending |
+| 9 | P2P Networking | Pending |
+| 10 | Blockchain Synchronization | Pending |
+| 11 | REST API | Pending |
+| 12 | React Wallet | Pending |
+| 13 | Blockchain Explorer | Pending |
+| 14 | Security and Testing | Pending |
+| 15 | Deployment | Pending |
+
+## Phase 0 Deliverables
+
+- [ ] Repository initialized.
+- [ ] Python virtual environment configured.
+- [ ] Backend dependencies installed.
+- [ ] FastAPI application initialized.
+- [ ] Initial health endpoint implemented.
+- [ ] Backend tests implemented.
+- [ ] React frontend initialized.
+- [ ] Frontend tests implemented.
+- [ ] Project configuration established.
+- [ ] Documentation created.
+- [ ] GitHub repository configured.
+- [ ] All tests passing.
+
+## Engineering Requirements
+
+- Maintain backward compatibility between phases.
+- Test all new functionality.
+- Document architectural decisions.
+- Never commit secrets.
+- Review changes before merging.
+- Preserve blockchain data during future migrations.
+
+## Current Notes
+
+Phase 0 establishes the development foundation only.
+
+No real blockchain, mining, wallet, transaction, or consensus functionality has been implemented yet.
+</WritingBlock>
+
+## 6.5 Create `documentation/ARCHITECTURE.md`
+
+<WritingBlock id="62843" variant="document"># PyCoin — System Architecture
+
+## 1. Overview
+
+PyCoin is an educational decentralized cryptocurrency implemented using Python.
+
+The system follows a modular architecture with independent blockchain, cryptography, wallet, transaction, consensus, networking, storage, and API components.
+
+## 2. Architecture Layers
+
+### Cryptography
+- SHA-256 hashing.
+- Ed25519 digital signatures.
+- Public and private key management.
+- Address derivation.
+
+### Blockchain Core
+- Block headers.
+- Block validation.
+- Genesis block.
+- Merkle trees.
+- Blockchain management.
+
+### Transaction Engine
+- Transaction construction.
+- Signature verification.
+- Account nonce validation.
+- Balance validation.
+- Transaction fees.
+
+### Consensus
+- Proof of Work.
+- Mining.
+- Difficulty adjustment.
+- Chain selection.
+- Fork resolution.
+
+### Networking
+- Peer discovery.
+- Node communication.
+- Transaction propagation.
+- Block propagation.
+- Synchronization.
+
+### Storage
+- SQLite.
+- SQLAlchemy.
+- Alembic migrations.
+- Persistent blockchain state.
+
+### API
+- FastAPI.
+- Request validation.
+- Node health.
+- Blockchain endpoints.
+
+### Frontend
+- React.
+- Wallet interface.
+- Transaction interface.
+- Blockchain explorer.
+- Mining dashboard.
+
+## 3. Ledger Model
+
+The initial implementation uses an account-based ledger.
+
+Accounts maintain balances and transaction nonces. Balances are derived from validated ledger transitions.
+
+## 4. Consensus
+
+The educational network will use Proof of Work.
+
+Nodes independently validate blocks and select the valid chain with the greatest accumulated work.
+
+## 5. Security Principles
+
+- Use established cryptographic libraries.
+- Never transmit private keys to backend services.
+- Use deterministic transaction serialization.
+- Prevent replay and double-spending.
+- Validate all incoming network messages.
+- Protect against denial-of-service attacks.
+- Keep development secrets outside version control.
+
+## 6. Deployment Strategy
+
+Development begins with local single-node execution.
+
+Later phases introduce multiple independent nodes, private testnet deployment, containerization, monitoring, and recovery mechanisms.
+
+## 7. Scope
+
+PyCoin is initially an educational cryptocurrency. Its successful implementation does not automatically establish production security or economic viability.
+</WritingBlock>
+
+## 6.6 Create `CHANGELOG.md`
+
+```markdown
+# Changelog
+
+All notable project changes are documented here.
+
+## [0.1.0] - Phase 0
+
+### Added
+- Initial repository structure.
+- Python backend configuration.
+- FastAPI application.
+- Initial health endpoint.
+- Backend test foundation.
+- React frontend foundation.
+- Frontend test configuration.
+- Initial architecture documentation.
+- Project roadmap.
+```
+
+# 7. Correct Vite configuration
+
+Use this final version of `frontend/vite.config.js` (this replaces the earlier draft):
+
+```javascript
+import { defineConfig } from "vitest/config";
+import react from "@vitejs/plugin-react";
+
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    host: "127.0.0.1",
+    port: 5173,
+    strictPort: true,
+  },
+  test: {
+    environment: "jsdom",
+    setupFiles: "./src/test/setup.js",
+  },
+});
+```
+
+This uses Vitest's configuration helper, so the `test` property is correctly recognized.
+
+# 8. Final project verification
+
+Before committing Phase 0, verify the entire project.
+
+## 8.1 Backend verification
+
+```bash
+cd ~/Projects/pycoin
+
+source .venv/bin/activate
+
+echo "===== DEPENDENCY CHECK ====="
+python -m pip check
+
+echo "===== PYTHON COMPILE ====="
+python -m compileall -q backend/pycoin backend/tests
+
+echo "===== BACKEND TESTS ====="
+pytest -v
+
+echo "===== BACKEND COVERAGE ====="
+pytest --cov=pycoin --cov-report=term-missing
+
+echo "===== LINT ====="
+ruff check backend
+```
+
+The configured coverage threshold is 80%. The three initial API tests may not meet that threshold, so do not treat coverage failure as a code failure; either add appropriate tests or keep coverage reporting separate from the initial Phase 0 acceptance test.
+
+## 8.2 Frontend verification
+
+```bash
+cd ~/Projects/pycoin/frontend
+
+echo "===== FRONTEND TESTS ====="
+npm test
+
+echo "===== FRONTEND BUILD ====="
+npm run build
+
+echo "===== PACKAGE CHECK ====="
+npm ls --depth=0
+```
+
+## 8.3 Check Git changes
+
+```bash
+cd ~/Projects/pycoin
+
+git status --short
+
+git diff --check
+
+git status
+```
+
+Expected result:
+
+- No syntax errors.
+- No dependency conflicts.
+- Backend tests passing.
+- Frontend tests passing.
+- Frontend production build successful.
+- No accidental database or secret files tracked.
+
+---
+
+# 9. GitHub integration
+
+Now connect your local PyCoin project to GitHub.
+
+## 9.1 Configure Git identity
+
+```bash
+git config --global user.name "YOUR_GITHUB_USERNAME"
+git config --global user.email "YOUR_GITHUB_EMAIL"
+```
+
+## 9.2 Verify GitHub CLI authentication
+
+```bash
+gh auth status
+```
+
+If not authenticated:
+
+```bash
+gh auth login
+```
+
+Choose:
+
+- GitHub.com
+- HTTPS
+- Authenticate using browser
+
+## 9.3 Create the initial commit
+
+```bash
+cd ~/Projects/pycoin
+
+git add .
+
+git commit -m "Initialize PyCoin cryptocurrency project"
+```
+
+Rename the branch:
+
+```bash
+git branch -M main
+```
+
+## 9.4 Create GitHub repository
+
+For a public educational repository:
+
+```bash
+gh repo create pycoin \
+  --public \
+  --source=. \
+  --remote=origin \
+  --push
+```
+
+If you prefer a private repository, replace `--public` with `--private`.
+
+## 9.5 Verify remote and commit
+
+```bash
+git remote -v
+
+git log -1 --oneline
+
+git status
+```
+
+Expected:
+
+```text
+On branch main
+nothing to commit, working tree clean
+```
+
+Your repository should now be available at:
+
+`https://github.com/YOUR_GITHUB_USERNAME/pycoin`
+
+Do not manually create another GitHub repository if the `gh repo create` command has already succeeded.
+
+---
+
+# 10. Final Phase 0 acceptance checklist
+
+Use this checklist before moving to Phase 1.
+
+{@body const checks = ["Python virtual environment created","Backend dependencies installed","FastAPI application starts successfully","Health endpoint returns HTTP 200","Backend tests pass","Ruff lint passes","React application starts successfully","Frontend tests pass","React production build succeeds","CORS integration verified","README and architecture documentation created","LICENSE and .gitignore created","GitHub repository created","Initial commit pushed","Git working tree clean"]}
+{@body const [done,setDone] = DIL.useState([])}
+<box border radius="lg" padding={3} gap={3}>
+  <row align=center justify=between>
+    **Phase 0 completion**
+    <title size="xl" color="default" tabularNums>{done.length}/{checks.length}</title>
+  </row>
+  <box background="surface-tertiary" height="8px" radius="full" clip>
+    <box background="#16A34A" height="8px" radius="full" width={`${done.length/checks.length*100}%`}/>
+  </box>
+  {#each checks as item,i}
+    <checkbox key={i} checked={done.includes(i)} onChange={v=>setDone(old=>v?[...old,i]:old.filter(x=>x!==i))}>{item}</checkbox>
+  {/each}
+  {#if done.length===checks.length}
+    <badge color="success">All acceptance checks marked complete</badge>
+    Update `documentation/PROJECT_STATUS.md` and commit the final Phase 0 status.
+  {/if}
+</box>
+
+# 11. What comes next?
+
+<box border radius="lg" padding={3} gap={2}>
+  <badge color="info">Next phase</badge>
+  <title size="xl">Phase 1 — Cryptographic Foundation</title>
+  <AsyncImage query="cryptography public private key Ed25519 digital signatures SHA256 cybersecurity illustration" aspectRatio="16:9" width="100%"/>
+  We will implement the actual cryptographic foundation of PyCoin.
+
+  **Modules to develop:**
+
+  1. SHA-256 hashing engine.
+  2. Ed25519 key generation.
+  3. Digital signature generation.
+  4. Digital signature verification.
+  5. Public key encoding.
+  6. Cryptocurrency address generation.
+  7. Cryptographic utility functions.
+  8. Security and edge-case tests.
+
+  **Expected result:** PyCoin will be able to generate cryptographic identities and securely sign and verify messages.
+</box>
+
+**One important instruction:** Do not start Phase 1 until Phase 0 tests and GitHub integration are successful.
+
+When you finish, send me these outputs:
+
+```bash
+cd ~/Projects/pycoin
+
+pytest -v
+
+cd frontend
+npm test
+npm run build
+
+cd ..
+git status
+git log -1 --oneline
+```
+
+I'll review the results, identify any errors or architectural conflicts, and then guide you through Phase 1 with complete compatible code.
+
