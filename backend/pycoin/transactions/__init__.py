@@ -1,9 +1,10 @@
-"""PyCoin transaction models, serialization, and exceptions."""
+"""PyCoin transaction models, identifiers, serialization, and exceptions."""
 
 from pycoin.transactions.exceptions import (
     InvalidTransactionError,
     TransactionError,
 )
+from pycoin.transactions.identifiers import calculate_transaction_id
 from pycoin.transactions.serialization import (
     TRANSACTION_FORMAT,
     TRANSACTION_FORMAT_VERSION,
@@ -30,4 +31,5 @@ __all__ = [
     "serialize_transaction",
     "serialize_unsigned_transaction",
     "deserialize_transaction",
+    "calculate_transaction_id",
 ]
